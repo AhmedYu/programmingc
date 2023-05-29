@@ -12,11 +12,11 @@
 int main(){
    // Function declaration
   int checkAnswerOfNumber(int minValue, int maxValue) ;
-    int number = checkAnswerOfNumber(1,  32767); //this variable will store the input from the user.
+    int num = checkAnswerOfNumber(1,  32767); //this variable will store the input from the user.
     
    //TODO: if the num is less than 1 or greater than 32767 ask agian 
 
- printf("You entered : %i\t",  number, "\n");
+ printf("You entered , %i",  num);
 //  digitSeparater(32767);
 }
 /********************************************************************
@@ -45,7 +45,6 @@ int checkAnswerOfNumber(int minValue, int maxValue) {
                 printf("Invalid number. Please enter a number between %d and %d: ", minValue, maxValue);
                 scanf("%i", &num);
             }
-            return num;
         }
     }
     
