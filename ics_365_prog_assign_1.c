@@ -8,18 +8,20 @@
 #include<stdio.h>
  #include<string.h>
  #include<stdlib.h>
+ #include<math.h>
 // Function declaration
 void digitSeparater(int numbers);
+//FUNCTION DECLARATION
+int divide(int numberTobeDivided, int numberThatDivides);
+//FUNCTION DECLARATION
+int reminder(int numberTobeDivided, int numberThatDivides);
 int main(){
    // Function declaration
-  int checkAnswerOfNumber(int minValue, int maxValue) ;
-    int num = checkAnswerOfNumber(1,  32767); //this variable will store the input from the user.
-    
-   //TODO: if the num is less than 1 or greater than 32767 ask agian 
-
- printf("You entered  %i\n",  num);
-
- digitSeparater(num);
+//   int checkAnswerOfNumber(int minValue, int maxValue) ; //this function the require ment of the numbers to print with two spaces
+// int num = checkAnswerOfNumber(1,  32767); //this variable will store the input from the user.
+    printf( "%d", reminder(10,3));
+printf("\n%i ", divide(9,2));
+//  digitSeparater(num);
   
 }
 /********************************************************************
@@ -74,3 +76,15 @@ it will print a series of digits with two spaces separating each digit
     printf("\n");
 }
 
+//division function
+int divide(int numberTobeDivided, int numberThatDivides) {
+   
+ return numberTobeDivided / numberThatDivides;}
+ 
+        
+    
+
+//return the reminder
+int reminder(int numberTobeDivided, int numberThatDivides){
+    return   numberTobeDivided % numberThatDivides;
+}
