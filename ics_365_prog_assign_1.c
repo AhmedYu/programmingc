@@ -88,3 +88,4 @@ int divide(int numberTobeDivided, int numberThatDivides) {
 int reminder(int numberTobeDivided, int numberThatDivides){
     return   numberTobeDivided % numberThatDivides;
 }
+//almost done just clean up is needed.
