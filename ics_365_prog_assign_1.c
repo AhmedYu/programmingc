@@ -18,11 +18,15 @@ int reminder(int dividend, int divisor);
   int checkAnswerOfNumber(int minValue, int maxValue) ;  
 int main(){
     int num = checkAnswerOfNumber(1,  32767); //this variable will store the input from the user.
-    int divisor  = 8;
-    int dividend = 1424;
+
+    int divisor  = 8; //number tha will do the division
+
+    int dividend = 1424; //number that will be divided
+
     printf( "%d", reminder(dividend,divisor)); //print reminder
-    printf("\n%i ", divide(dividend,divisor));
-    digitSeparater(num);
+
+    printf("\n%i ", divide(dividend,divisor)); //call the divide function and print the result returned.
+    digitSeparater(num); //call the digit seperator.
 }
 /********************************************************************
  * The function ensures the input fals in between minValue and maxValue 
@@ -34,28 +38,36 @@ int main(){
 int checkAnswerOfNumber(int minValue, int maxValue) {
     int num = 0;
     printf("Enter numbers between %d and %d: ", minValue, maxValue);
-    scanf("%i", &num);
+    scanf("%i", &num); //number input from the user
     
     if (num < minValue || num > maxValue) {
-        char answer = ' ';
+
+        char answer = ' '; //stores the char answer of Y or N.
+
         printf("Remember the number should be between %d and %d.\n"
         "Do you want to try again? Enter 'y' for yes, 'n' for no.\t", minValue, maxValue);
+
         scanf(" %c", &answer); //get the answer from the user whether y or n to continue excution.
+        //check tha  answer provided if it is Y or y 
         if (strcmp(&answer, "y") == 0 || strcmp(&answer, "Y") == 0) {
        
             printf("Now enter the number: "); //prompt the user to enter the number again.
+
             scanf("%i", &num); //get the numeber from the user.
+
             //loop until th number is in between minvalue and maxvalue
             while (num < minValue || num > maxValue) { //continue asking if the number is not meeting the requirement
 
                 //print invalid and remind the requirements
                 printf("Invalid number. Please enter a number between %d and %d: ", minValue, maxValue);
+                 
+
                 scanf("%i", &num); //accept input from user and store it in num variable.
             }
         }
     }
     
-    return num; 
+    return num;  //return the number
 }
   
 /*******************************************************
@@ -65,6 +77,7 @@ int checkAnswerOfNumber(int minValue, int maxValue) {
  * @return : void
 **********************************************************/
  void digitSeparater(int numbers) {
+
     char strNumbers[6]; // Allocate a character array to store the string (including null terminator)
 
     sprintf(strNumbers, "%d", numbers); // Convert the numbers into a string
@@ -74,6 +87,7 @@ int checkAnswerOfNumber(int minValue, int maxValue) {
 
     for (int i = 0; i < sizeof(strNumbers) && strNumbers[i] != '\0'; i++) {
         printf("%c  ", strNumbers[i]); //print the each with two spaces a head of it
+
     }
 
     printf("\n");
@@ -85,7 +99,9 @@ int checkAnswerOfNumber(int minValue, int maxValue) {
   * @return : the function returns quotient or the result as an integer
  ***********************************************************/
 int divide(int dividend, int divisor) {
+
     return dividend / divisor;
+
     }
  /***
   * reminder function uses modulo to divide two numbers and send the reminder after the division.
@@ -94,5 +110,7 @@ int divide(int dividend, int divisor) {
   * @return : reminder of the two numbers after the divison.
  */
 int reminder(int dividend, int divisor){
-    return   dividend % divisor;
+
+    return   dividend % divisor; //divide the two numbers and reutrn them.
+
 }
