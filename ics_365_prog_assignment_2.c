@@ -26,6 +26,12 @@ unsigned getInput(){
     return num;
 }
 //TODO:-function that converts the number into binary
+/**
+ * @param : number to be converted
+ * @return : returns nothing but the result
+ * the funcitons converts unsigned integer into binary number 
+ * then it prints out the result 
+*/
 void convertToBinary(unsigned n){
     if(n == 0) return 0; //if the number provided is zero
     if(n == 1) return 1; //if the number provided is 1 return 1
