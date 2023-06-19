@@ -7,7 +7,7 @@
 #include<stdio.h>
 //FUNCTION PROTOTYPE
 unsigned getInput();
-void  convertToBinary(unsigned num);
+ 
 int main(int argc, char const *argv[])
 {
     printf("testing");
@@ -25,32 +25,16 @@ unsigned getInput(){
     scanf("%i", &num);
     return num;
 }
-//TODO:-function that converts the number into binary
-/**
- * @param : number to be converted
- * @return : returns nothing but the result
- * the funcitons converts unsigned integer into binary number 
- * then it prints out the result 
-*/
-void convertToBinary(unsigned n){
-    if(n == 0) return 0; //if the number provided is zero
-    if(n == 1) return 1; //if the number provided is 1 return 1
-
-int binaryArray[32]; // 32 binary
-    int i = 0; //index
-  //while the number is greater zero keep converting the number by using modulo and 
-    while (n > 0) {
-        binaryArray[i] = n % 2;
-        n = n / 2;
-        i++;
-    }
-   int j = sizeof(binaryArray);
-
-printf("the numebr you enter is : %i" , n);
-printf("\t = ");
-    for (int j = i - 1; j >= 0; j--) {
-        printf("%d", binaryArray[j]);
-    }
-    
-}
  
+ 
+ 
+//  # Prompt the user to enter an unsigned int value.
+
+// # Store the input value.
+// # Create the function reverseBits that takes the input value as a parameter.
+// # Convert the input value into its binary representation.
+// # Reverse the order of the bits in the binary representation.
+// # Convert the reversed binary representation back into an unsigned int value.
+// # Print the original value and its binary representation before the bits are reversed.
+// # Call the reverseBits function with the stored value as an argument.
+// # Print the reversed value and its binary representation after the bits are reversed.
