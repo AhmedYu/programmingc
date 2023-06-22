@@ -5,36 +5,52 @@
 * Author: AHMED YUSSUF
 */
 #include<stdio.h>
-//FUNCTION PROTOTYPE
-unsigned getInput();
+ //function prototype
+unsigned int getInput(); 
+//function prototype
+unsigned int*  convertToBinary(unsigned int number);
+ //function prototype
+// void printBinaryArray(unsigned int* binaryArray);
+ //function prototype
+// void reverseBinary(unsigned int* binaryArray, int size);
+
+int main() {
+    unsigned int number = getInput();
+  
  
-int main(int argc, char const *argv[])
-{
-    printf("testing");
-    printf("the number you enter is :%i", getInput());
-    printf("\n");
- 
-  printf("\n%i", 1 % 2);
-    /* code */
+
+    printf("Before bits are reversed:\n");
+    printf("\t%u = ", number);
+     
+  
+
+   
+
     return 0;
 }
-//TODO:-  function that accespts input from the user
-unsigned getInput(){
-    unsigned num ;
-    printf("Enter unsigned integer number : ");
-    scanf("%i", &num);
+
+unsigned int getInput() {
+    unsigned int num;
+    printf("Enter unsigned integer number: ");
+    scanf("%u", &num);
     return num;
 }
- 
- 
- 
-//  # Prompt the user to enter an unsigned int value.
 
-// # Store the input value.
-// # Create the function reverseBits that takes the input value as a parameter.
-// # Convert the input value into its binary representation.
-// # Reverse the order of the bits in the binary representation.
-// # Convert the reversed binary representation back into an unsigned int value.
-// # Print the original value and its binary representation before the bits are reversed.
-// # Call the reverseBits function with the stored value as an argument.
-// # Print the reversed value and its binary representation after the bits are reversed.
+unsigned int *  convertToBinary(unsigned int number) {
+    static  unsigned int binaryArray[32];
+
+    for (int i = 31; i >= 0; i--) {
+        int bit = (number >> i) & 1;
+     printf("%u", bit);
+    }
+return binaryArray;
+    
+}
+
+ 
+  void printBinaryArray(unsigned int* binaryArray) {
+    for (int i = 31; i >= 0; i--) {
+        printf("%u", binaryArray[i]);
+    }
+    printf("\n");
+}
