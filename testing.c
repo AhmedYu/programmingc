@@ -10,13 +10,12 @@
 // Function prototypes
 unsigned int* intToBinaryConverter(unsigned int* number);
 unsigned int getNumber();
-void reverseBinary(unsigned int* binary);
+    void reverseBinary(unsigned int* binary);
   
 //Main function
 int main(int argc, char const *argv[]) {
-    
    printf("Enter unsigned integer number:\n");
-    unsigned int n  =  getNumber(); //store the number in a viriable
+    unsigned int n  =  getNumber();
   
 
     printf("Before the bits are reversed:\n");
@@ -25,12 +24,12 @@ int main(int argc, char const *argv[]) {
   unsigned int* binary = intToBinaryConverter(&n);
     
     printf("\nAfter the bits are rversed : \n\t");
-    int bitshiftedN = n<<15; //shift bits by 15 bits this is basically like a division to shift bits
+    int bitshiftedN = n<<15;
    
         printf("%i\t", bitshiftedN);
         printf("=\t");
 
- reverseBinary(binary); //reverse the binary array elements from right to left.
+ reverseBinary(binary);
  printf("\n");
       
      return 0;
@@ -50,8 +49,7 @@ unsigned int getNumber(){
 /**
  * function takes in unsigned integer and converts it to
  * binary before printing it to the console
- * @param: unsigned int.
- * @return: an arrray of binary numbers
+ * 
 */
 unsigned int* intToBinaryConverter(unsigned int* number) {
  
@@ -63,7 +61,7 @@ unsigned int* intToBinaryConverter(unsigned int* number) {
     // Convert the number to binary
     while (temp > 0) {
         binaryNumberArray[index++] = temp % 2;
-        temp = temp / 2; //divide curent temp and store it back to temp variable 
+        temp = temp / 2;
        
  
     }
@@ -74,13 +72,6 @@ unsigned int* intToBinaryConverter(unsigned int* number) {
    
  
 }
-/***
- * function riverses the order of binary array by starting from 
- * first element
- * @param: binary array with unsigned int type.
- * @return: non
- * prints the reversed binary array.
-*/
  void reverseBinary(unsigned int* binary){
   static unsigned int rB[16] = {0};
    
