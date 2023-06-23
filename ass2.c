@@ -1,40 +1,54 @@
-#include<stdio.h>
-int main(int argc, char const *argv[])
-{int myarray[5] = {23,42,45,23,12};
-// printf("the size of the array is : %lu", sizeof(myarray));
-    /* code */
-    int n = 9;
-    int r;
-    int q = n;
-unsigned int arrB[32];
-for(int i = 0; i < 32; i++){
- while(q>1){
-    q = n / 2;
-    r = n % 2;
+#include <stdio.h>
 
-  
+// Function prototypes
+void intToBinaryConverter_printer(unsigned int* number);
+unsigned int reverseBits(unsigned int number);
 
-    arrB[i] = r;
- 
+int main(int argc, char const *argv[]) {
+    unsigned int n;
+    printf("Enter an unsigned integer: ");
+    scanf("%u", &n);
 
-  n = q;
-  }
-  printf("%u",  arrB[i]);
-     if(q == 1){
-            arrB[i] = q;
-        break;
-    }
- 
+    printf("Before the bits are reversed:\n");
+    intToBinaryConverter_printer(&n);
 
-  
+    unsigned int reversedNumber = reverseBits(n);
+
+    printf("After the bits are reversed:\n");
+    printf("%u = ", reversedNumber);
+    intToBinaryConverter_printer(&reversedNumber);
+
+    return 0;
 }
 
- 
- 
-//  for(int i = 0; i<  5; i++){
+void intToBinaryConverter_printer(unsigned int* number) {
+    printf("\t\t%u =", *number);
+    int temp = *number;
+    unsigned int binary[16] = {0}; // Array to store the binary representation
+    int index = 0;
 
-//     printf("%u\n", arrB[i]);
-//  }
- 
-    return 0;
+    // Convert the number to binary
+    while (temp > 0) {
+        binary[index++] = temp % 2;
+        temp = temp / 2;
+    }
+
+    for (int i = 15; i >= 0; i--) {
+        printf("%u", binary[i]);
+    }
+
+    printf("\n");
+}
+
+unsigned int reverseBits(unsigned int number) {
+    unsigned int reversedNumber = 0;
+
+    // Reverse the bits
+    for (int i = 0; i < 16; i++) {
+        reversedNumber <<= 1; // Shift the reversed number to the left
+        reversedNumber |= (number & 1); // Set the least significant bit of reversed number with the corresponding bit from the original number
+        number >>= 1; // Shift the original number to the right
+    }
+
+    return reversedNumber;
 }
